@@ -4,8 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 const stats = [
   { number: 15, label: "Projects Completed", suffix: "+" },
-  { number: 3, label: "Years Experience", suffix: "+" },
-  { number: 100, label: "Client Satisfaction", suffix: "%" }
+  { number: 1, label: "Years Experience", suffix: "+" }
 ];
 
 interface AnimatedCounterProps {
@@ -53,7 +52,7 @@ export default function StatsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {stats.map((stat, idx) => (
           <motion.div
             key={stat.label}

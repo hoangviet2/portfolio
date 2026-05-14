@@ -118,7 +118,7 @@ export default function HeroSection() {
           className="mb-8 md:mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white">
-            Full stack developer | College Sophomore
+            Full stack developer | UW Junior
           </h2>
         </motion.div>
 

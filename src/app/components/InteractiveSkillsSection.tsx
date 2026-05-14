@@ -6,28 +6,28 @@ const skillCategories = [
   {
     name: "Frontend",
     skills: [
-      { name: "React/Next.js", level: 95, color: "bg-blue-500" },
-      { name: "TypeScript", level: 90, color: "bg-blue-600" },
-      { name: "Tailwind CSS", level: 92, color: "bg-cyan-500" },
-      { name: "Framer Motion", level: 88, color: "bg-purple-500" }
+      { name: "React Native", level: 80, color: "bg-blue-500" },
+      { name: "Swift", level: 90, color: "bg-blue-600" },
+      { name: "TypeScript", level: 90, color: "bg-cyan-500" },
+      { name: "React/Next.js", level: 85, color: "bg-purple-500" }
     ]
   },
   {
     name: "Backend",
     skills: [
       { name: "Node.js", level: 85, color: "bg-green-500" },
-      { name: "Python", level: 80, color: "bg-yellow-500" },
-      { name: "MongoDB", level: 82, color: "bg-green-600" },
-      { name: "REST APIs", level: 88, color: "bg-orange-500" }
+      { name: "Python", level: 95, color: "bg-yellow-500" },
+      { name: "REST APIs", level: 88, color: "bg-orange-500" },
+      { name: "PostgreSQL", level: 85, color: "bg-green-600" }
     ]
   },
   {
-    name: "Design",
+    name: "AI/ML",
     skills: [
-      { name: "UI/UX Design", level: 90, color: "bg-pink-500" },
-      { name: "Figma", level: 92, color: "bg-purple-600" },
-      { name: "Prototyping", level: 85, color: "bg-indigo-500" },
-      { name: "Design Systems", level: 88, color: "bg-red-500" }
+      { name: "PyTorch", level: 70, color: "bg-pink-500" },
+      { name: "TensorFlow", level: 85, color: "bg-purple-600" },
+      { name: "Design AI system", level: 90, color: "bg-indigo-500" },
+      { name: "Agentic AI", level: 90, color: "bg-red-500" }
     ]
   }
 ];
