@@ -12,7 +12,7 @@ export default function AboutSection() {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <motion.img
-        src="/images/memoji.jpeg"
+        src="/images/memoji.jpg"
         alt="Hoang, Viet Memoji"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
