@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 
 const educationItems = [
   {
-    school: "Green River College",
-    dates: "September 2024 - August 2026",
-    program: "Associate in Computer Science",
-    highlights: [
-      "Relevant coursework: Calculus I, II, III; Topics in Linear Algebra; Discrete Structures."
-    ]
-  },
-  {
     school: "University of Washington Tacoma",
     dates: "September 2026 - Present",
     program: "B.S. Computer Science and Systems",
     highlights: [
       "Currently enrolled and continuing coursework."
+    ]
+  },
+  {
+    school: "Green River College",
+    dates: "September 2024 - August 2026",
+    program: "Associate in Computer Science",
+    highlights: [
+      "Relevant coursework: Calculus I, II, III; Topics in Linear Algebra; Discrete Structures."
     ]
   }
 ];

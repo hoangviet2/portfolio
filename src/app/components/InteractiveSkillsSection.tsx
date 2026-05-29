@@ -57,7 +57,7 @@ export default function InteractiveSkillsSection() {
               onClick={() => setActiveCategory(idx)}
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === idx
-                  ? 'bg-appleBlue text-white shadow-lg'
+                  ? 'bg-appleBlue text-white shadow-lg dark:bg-white/90 dark:text-black'
                   : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
               }`}
               whileHover={{ scale: 1.05 }}

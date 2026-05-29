@@ -32,10 +32,10 @@ export default function AboutSection() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">
           About Me
         </h2>
-        <p className="text-lg text-appleBlack/80 mb-2">
+        <p className="text-lg text-appleBlack/80 dark:text-white/80 mb-2">
           I&apos;m Hoang, Viet, a Computer Science student focused on AI, machine learning, and software engineering. I build AI-driven applications, including personalized systems and data science solutions.
         </p>
-        <p className="text-md text-gray-600">
+        <p className="text-md text-gray-600 dark:text-gray-300">
           Experienced in hackathons, research projects, and competitive programming, I lead and contribute to tech communities while aiming to build scalable, intelligent systems with real-world impact.
         </p>
       </motion.div>

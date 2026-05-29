@@ -50,7 +50,7 @@ export default function ProjectsSection() {
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 bg-appleGray text-appleBlack/80 rounded-full text-xs font-medium shadow-sm"
+                  className="px-3 py-1 bg-appleGray text-appleBlack/80 dark:bg-white/10 dark:text-white/80 rounded-full text-xs font-medium shadow-sm"
                 >
                   {tech}
                 </span>
