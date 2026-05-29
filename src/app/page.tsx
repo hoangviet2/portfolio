@@ -41,9 +41,10 @@ const AboutSection = dynamic(() => import("./components/AboutSection"), {
   ssr: false
 });
 
-const ContactSection = dynamic(() => import("./components/ContactSection"), {
+const EducationSection = dynamic(() => import("./components/EducationSection"), {
   ssr: false
 });
+
 
 interface HomeProps {
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -90,7 +91,7 @@ export default function Home({ searchParams }: HomeProps) {
           <ToolsSection />
           <InteractiveSkillsSection />
           <AboutSection />
-          <ContactSection />
+          <EducationSection />
         </main>
       )}
     </>

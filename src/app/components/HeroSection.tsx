@@ -208,7 +208,7 @@ export default function HeroSection() {
 
           {/* Get In Touch Button - Same Liquid Glass Effect */}
           <motion.a
-            href="#contact"
+            href="#education"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2)"
@@ -268,7 +268,7 @@ export default function HeroSection() {
               ))}
             </div>
             
-            <span className="relative z-10 text-black dark:text-white">Get In Touch</span>
+            <span className="relative z-10 text-black dark:text-white">View Education</span>
           </motion.a>
         </motion.div>
       </div>
