@@ -33,6 +33,10 @@ const InteractiveSkillsSection = dynamic(() => import("./components/InteractiveS
   ssr: false
 });
 
+const ChessBoardSection = dynamic(() => import("./components/ChessBoardSection"), {
+  ssr: false
+});
+
 const StatsSection = dynamic(() => import("./components/StatsSection"), {
   ssr: false
 });
@@ -90,6 +94,7 @@ export default function Home({ searchParams }: HomeProps) {
           <AchievementsSection />
           <ToolsSection />
           <InteractiveSkillsSection />
+          <ChessBoardSection />
           <AboutSection />
           <EducationSection />
         </main>
