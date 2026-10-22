@@ -79,7 +79,7 @@ export default function HeroSection() {
               duration: 0.6,
               ease: "easeOut"
             }}
-            className="text-xl md:text-2xl font-medium text-black dark:text-white"
+            className="text-xl md:text-2xl font-medium text-ink"
           >
             {greetings[currentGreeting]}
           </motion.h2>
@@ -94,14 +94,14 @@ export default function HeroSection() {
         >
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight">
             <motion.span
-              className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 text-transparent bg-clip-text"
+              className="block bg-gradient-to-r from-uw-purple via-[#6d4fb0] to-uw-heritage-gold dark:from-uw-lavender dark:via-uw-gold dark:to-uw-spirit-gold text-transparent bg-clip-text"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300, damping: 18 }}
             >
               Viet
             </motion.span>
             <motion.span
-              className="block bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400 text-transparent bg-clip-text"
+              className="block bg-gradient-to-r from-uw-heritage-gold via-uw-purple to-uw-spirit-purple dark:from-uw-gold dark:via-uw-lavender dark:to-white text-transparent bg-clip-text"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300, damping: 18 }}
             >
@@ -117,7 +117,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mb-8 md:mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-ink">
             Full stack developer | UW Junior
           </h2>
         </motion.div>
@@ -129,7 +129,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 1.1 }}
           className="mb-12 max-w-2xl"
         >
-          <p className="text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+          <p className="text-lg md:text-xl leading-relaxed text-muted">
             Computer Science student focused on AI, machine learning, and software engineering.
           </p>
         </motion.div>
@@ -161,14 +161,14 @@ export default function HeroSection() {
             <motion.div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"
               style={{
-                background: "linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3))",
+                background: "linear-gradient(135deg, rgba(75,46,131,0.3), rgba(183,165,122,0.3))",
               }}
               animate={{
                 background: [
-                  "linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3))",
-                  "linear-gradient(225deg, rgba(167,139,250,0.3), rgba(244,114,182,0.3))",
-                  "linear-gradient(315deg, rgba(244,114,182,0.3), rgba(96,165,250,0.3))",
-                  "linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3))"
+                  "linear-gradient(135deg, rgba(75,46,131,0.3), rgba(183,165,122,0.3))",
+                  "linear-gradient(225deg, rgba(183,165,122,0.3), rgba(197,180,227,0.3))",
+                  "linear-gradient(315deg, rgba(197,180,227,0.3), rgba(75,46,131,0.3))",
+                  "linear-gradient(135deg, rgba(75,46,131,0.3), rgba(183,165,122,0.3))"
                 ]
               }}
               transition={{
@@ -203,7 +203,7 @@ export default function HeroSection() {
               ))}
             </div>
             
-            <span className="relative z-10 text-black dark:text-white">View My Work</span>
+            <span className="relative z-10 text-ink">View My Work</span>
           </motion.a>
 
           {/* Get In Touch Button - Same Liquid Glass Effect */}
@@ -226,14 +226,14 @@ export default function HeroSection() {
             <motion.div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"
               style={{
-                background: "linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3))",
+                background: "linear-gradient(135deg, rgba(75,46,131,0.3), rgba(183,165,122,0.3))",
               }}
               animate={{
                 background: [
-                  "linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3))",
-                  "linear-gradient(225deg, rgba(167,139,250,0.3), rgba(244,114,182,0.3))",
-                  "linear-gradient(315deg, rgba(244,114,182,0.3), rgba(96,165,250,0.3))",
-                  "linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3))"
+                  "linear-gradient(135deg, rgba(75,46,131,0.3), rgba(183,165,122,0.3))",
+                  "linear-gradient(225deg, rgba(183,165,122,0.3), rgba(197,180,227,0.3))",
+                  "linear-gradient(315deg, rgba(197,180,227,0.3), rgba(75,46,131,0.3))",
+                  "linear-gradient(135deg, rgba(75,46,131,0.3), rgba(183,165,122,0.3))"
                 ]
               }}
               transition={{
@@ -268,7 +268,7 @@ export default function HeroSection() {
               ))}
             </div>
             
-            <span className="relative z-10 text-black dark:text-white">View Education</span>
+            <span className="relative z-10 text-ink">View Education</span>
           </motion.a>
         </motion.div>
       </div>
@@ -280,14 +280,14 @@ export default function HeroSection() {
           animate="animate"
           className="w-32 h-32 md:w-48 md:h-48 rounded-full blur-3xl absolute top-20 right-10 md:top-32 md:right-32 opacity-30"
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 dark:from-blue-400 dark:to-purple-400" />
+          <div className="w-full h-full rounded-full bg-gradient-to-br from-uw-purple via-uw-lavender to-uw-gold dark:from-uw-purple dark:to-uw-lavender" />
         </motion.div>
         <motion.div
           variants={ballVariants}
           animate="animate"
           className="w-24 h-24 md:w-32 md:h-32 rounded-full blur-2xl absolute bottom-32 left-10 md:bottom-48 md:left-32 opacity-20"
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-pink-200 via-blue-200 to-purple-200 dark:from-pink-400 dark:to-blue-400" />
+          <div className="w-full h-full rounded-full bg-gradient-to-br from-uw-gold via-uw-lavender to-uw-lavender dark:from-uw-gold dark:to-uw-purple" />
         </motion.div>
       </div>
 

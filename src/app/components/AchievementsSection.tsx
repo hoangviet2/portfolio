@@ -11,7 +11,7 @@ export default function AchievementsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-black dark:text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-ink">
         Achievements
       </h2>
       <motion.ol
@@ -32,7 +32,7 @@ export default function AchievementsSection() {
           variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
         >
           <span className="font-semibold">Top 8 - ICPC Pacific Northwest Regional Contest 2025 (Washington site)</span>
-          <p className="ml-4 text-gray-700 dark:text-gray-300">
+          <p className="ml-4 text-muted">
             Placed in the top 8 teams at the ICPC Pacific Northwest regional, Washington site, by solving multiple algorithmic problems under strict time constraints.
           </p>
         </motion.li>
@@ -40,7 +40,7 @@ export default function AchievementsSection() {
           variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
         >
           <span className="font-semibold">Machine Learning Intern - Mastcot GO LLC</span>
-          <p className="ml-4 text-gray-700 dark:text-gray-300">
+          <p className="ml-4 text-muted">
             Built and improved ML features for an app that helps connect students with support, resources, and opportunities.
           </p>
         </motion.li>
@@ -48,7 +48,7 @@ export default function AchievementsSection() {
           variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
         >
           <span className="font-semibold">Project Manager, AI Lead - Gator Guide</span>
-          <p className="ml-4 text-gray-700 dark:text-gray-300">
+          <p className="ml-4 text-muted">
             Led the project and AI direction for a Green River College initiative that helps students transfer to their dream school.
           </p>
         </motion.li>
@@ -86,7 +86,7 @@ export default function AchievementsSection() {
               />
             </div>
             <div className="flex-1 text-center">
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <h3 className="text-sm font-medium text-muted">
                 Samsung Solve for Tomorrow - Top 50 Global
               </h3>
             </div>
@@ -115,13 +115,13 @@ export default function AchievementsSection() {
             </div>
           </div>
           <div className="bg-gray-50 dark:bg-gray-800 px-4 py-2 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex items-center justify-between text-xs text-muted">
               <span>Video Player</span>
               <span>1080p • Auto-playing</span>
             </div>
           </div>
         </div>
-        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 rounded-2xl blur-xl -z-10"></div>
+        <div className="absolute -inset-4 bg-gradient-to-r from-uw-purple/5 via-uw-lavender/5 to-uw-gold/5 rounded-2xl blur-xl -z-10"></div>
       </motion.div>
       */}
 
@@ -139,7 +139,7 @@ export default function AchievementsSection() {
           href="https://www.news18.com/news/studio18/samsung-solve-for-tomorrow-competitions-top-50-shortlisted-entries-highlight-innovative-solutions-in-healthcare-5825209.html"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-appleBlue underline hover:text-appleBlack dark:hover:text-white transition-colors"
+          className="inline-block text-accent underline hover:text-ink dark:hover:text-white transition-colors"
         >
           News18: Samsung Solve for Tomorrow Competition&apos;s Top 50 Shortlisted Entries Highlight Innovative Solutions in Healthcare
         </a>

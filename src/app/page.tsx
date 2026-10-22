@@ -50,20 +50,23 @@ const EducationSection = dynamic(() => import("./components/EducationSection"), 
 });
 
 
-interface HomeProps {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default function Home({ searchParams }: HomeProps) {
+export default function Home() {
   const [showLoading, setShowLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    
-    // Always show loading screen for the Apple bootup experience
-    // Remove session storage check to ensure loading shows every time
+
+    // The boot screen plays on every fresh visit, but not when jumping to a section from
+    // another page (e.g. /chess/ → /#projects)
+    if (window.location.hash) {
+      setShowLoading(false);
+      setShowContent(true);
+      setTimeout(() => {
+        document.querySelector(window.location.hash)?.scrollIntoView();
+      }, 400);
+    }
   }, []);
 
   const handleLoadingComplete = () => {

@@ -38,3 +38,8 @@ coverage/
 # Misc
 *.swp
 *.swo
+
+# Chess bot training data / outputs (PGNs are ~290MB; they live in Google Drive)
+data/
+chess-bot/out/
+.playwright-mcp/

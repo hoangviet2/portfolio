@@ -33,7 +33,7 @@ export default function ToolsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-black dark:text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-ink">
         Tools & Tech Stack
       </h2>
       

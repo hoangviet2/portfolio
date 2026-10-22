@@ -8,7 +8,7 @@ export default function ScrollIndicator() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 h-1 bg-appleBlue origin-left z-50"
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-uw-purple via-uw-lavender to-uw-gold origin-left z-50"
     />
   );
 } 

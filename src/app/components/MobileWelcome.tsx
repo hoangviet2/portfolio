@@ -64,7 +64,7 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-gradient-to-r from-blue-400/30 to-purple-400/30 blur-xl"
+            className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-gradient-to-r from-uw-purple/30 to-uw-lavender/30 blur-xl"
           />
           <motion.div
             animate={{
@@ -77,7 +77,7 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
               ease: "easeInOut",
               delay: 1
             }}
-            className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-gradient-to-r from-pink-400/30 to-blue-400/30 blur-xl"
+            className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-gradient-to-r from-uw-gold/30 to-uw-purple/30 blur-xl"
           />
           <motion.div
             animate={{
@@ -90,7 +90,7 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
               ease: "easeInOut",
               delay: 2
             }}
-            className="absolute top-1/2 right-1/3 w-24 h-24 rounded-full bg-gradient-to-r from-purple-400/30 to-pink-400/30 blur-xl"
+            className="absolute top-1/2 right-1/3 w-24 h-24 rounded-full bg-gradient-to-r from-uw-lavender/30 to-uw-gold/30 blur-xl"
           />
         </div>
 
@@ -110,18 +110,18 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
                   scale: currentText.length > 0 ? [1, 1.1, 1] : 1,
                   boxShadow: currentText.length > 0 
                     ? [
-                        "0 0 20px rgba(96,165,250,0.3)",
-                        "0 0 40px rgba(96,165,250,0.6)",
-                        "0 0 20px rgba(96,165,250,0.3)"
+                        "0 0 20px rgba(75,46,131,0.3)",
+                        "0 0 40px rgba(75,46,131,0.6)",
+                        "0 0 20px rgba(75,46,131,0.3)"
                       ]
-                    : "0 0 20px rgba(96,165,250,0.3)"
+                    : "0 0 20px rgba(75,46,131,0.3)"
                 }}
                 transition={{
                   duration: 0.8,
                   repeat: currentText.length > 0 ? Infinity : 0,
                   ease: "easeInOut"
                 }}
-                className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 flex items-center justify-center"
+                className="w-20 h-20 rounded-full bg-gradient-to-r from-uw-purple via-uw-lavender to-uw-gold flex items-center justify-center"
               >
                 <motion.div
                   animate={{
@@ -134,7 +134,7 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
                   }}
                   className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-r from-uw-purple to-uw-spirit-purple" />
                 </motion.div>
               </motion.div>
 
@@ -171,12 +171,12 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-center"
           >
-            <div className="text-2xl font-medium text-gray-800 dark:text-gray-200 mb-2">
+            <div className="text-2xl font-medium text-ink mb-2">
               <span>{currentText}</span>
               <motion.span
                 animate={{ opacity: showCursor ? 1 : 0 }}
                 transition={{ duration: 0.1 }}
-                className="inline-block w-0.5 h-6 bg-blue-500 ml-1"
+                className="inline-block w-0.5 h-6 bg-uw-gold ml-1"
               />
             </div>
             
@@ -187,7 +187,7 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="text-sm text-gray-600 dark:text-gray-400"
+                  className="text-sm text-muted"
                 >
                   Viet Hoang
                 </motion.p>
@@ -216,7 +216,7 @@ export default function MobileWelcome({ onComplete }: MobileWelcomeProps) {
                     delay: i * 0.2,
                     ease: "easeInOut"
                   }}
-                  className="w-2 h-2 rounded-full bg-blue-500"
+                  className="w-2 h-2 rounded-full bg-uw-gold"
                 />
               ))}
             </div>

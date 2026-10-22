@@ -6,28 +6,28 @@ const skillCategories = [
   {
     name: "Frontend",
     skills: [
-      { name: "React Native", level: 80, color: "bg-blue-500" },
-      { name: "Swift", level: 90, color: "bg-blue-600" },
-      { name: "TypeScript", level: 90, color: "bg-cyan-500" },
-      { name: "React/Next.js", level: 85, color: "bg-purple-500" }
+      { name: "React Native", level: 80, color: "bg-uw-gold" },
+      { name: "Swift", level: 90, color: "bg-uw-purple" },
+      { name: "TypeScript", level: 90, color: "bg-uw-gold" },
+      { name: "React/Next.js", level: 85, color: "bg-uw-heritage-gold" }
     ]
   },
   {
     name: "Backend",
     skills: [
-      { name: "Node.js", level: 85, color: "bg-green-500" },
-      { name: "Python", level: 95, color: "bg-yellow-500" },
-      { name: "REST APIs", level: 88, color: "bg-orange-500" },
-      { name: "PostgreSQL", level: 85, color: "bg-green-600" }
+      { name: "Node.js", level: 85, color: "bg-uw-lavender" },
+      { name: "Python", level: 95, color: "bg-uw-purple" },
+      { name: "REST APIs", level: 88, color: "bg-uw-gold" },
+      { name: "PostgreSQL", level: 85, color: "bg-uw-heritage-gold" }
     ]
   },
   {
     name: "AI/ML",
     skills: [
-      { name: "PyTorch", level: 70, color: "bg-pink-500" },
-      { name: "TensorFlow", level: 85, color: "bg-purple-600" },
-      { name: "Design AI system", level: 90, color: "bg-indigo-500" },
-      { name: "Agentic AI", level: 90, color: "bg-red-500" }
+      { name: "PyTorch", level: 70, color: "bg-uw-lavender" },
+      { name: "TensorFlow", level: 85, color: "bg-uw-purple" },
+      { name: "Design AI system", level: 90, color: "bg-uw-gold" },
+      { name: "Agentic AI", level: 90, color: "bg-uw-heritage-gold" }
     ]
   }
 ];
@@ -44,7 +44,7 @@ export default function InteractiveSkillsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-black dark:text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-ink">
         Skills & Expertise
       </h2>
       
@@ -57,8 +57,8 @@ export default function InteractiveSkillsSection() {
               onClick={() => setActiveCategory(idx)}
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === idx
-                  ? 'bg-appleBlue text-white shadow-lg dark:bg-white/90 dark:text-black'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white'
+                  ? 'bg-uw-purple text-white shadow-lg dark:bg-uw-gold dark:text-uw-spirit-purple'
+                  : 'text-muted hover:text-ink'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -83,19 +83,19 @@ export default function InteractiveSkillsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="bg-white/70 dark:bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/40 dark:border-white/20 shadow-glass"
+            className="bg-surface/80 backdrop-blur-xl rounded-xl p-6 border border-line shadow-glass"
           >
             <div className="flex justify-between items-center mb-3">
-              <h3 className="font-semibold text-black dark:text-white">
+              <h3 className="font-semibold text-ink">
                 {skill.name}
               </h3>
-              <span className="text-sm text-gray-600 dark:text-gray-400">
+              <span className="text-sm text-muted">
                 {skill.level}%
               </span>
             </div>
             
             {/* Progress Bar */}
-            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+            <div className="w-full bg-chip rounded-full h-2 overflow-hidden">
               <motion.div
                 className={`h-full ${skill.color} rounded-full`}
                 initial={{ width: 0 }}

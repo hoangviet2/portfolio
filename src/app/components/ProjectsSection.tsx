@@ -33,7 +33,7 @@ export default function ProjectsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-black dark:text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-ink">
         Featured Projects
       </h2>
       <div className="grid gap-8 md:grid-cols-3">
@@ -41,22 +41,22 @@ export default function ProjectsSection() {
           <motion.div
             key={project.title}
             whileHover={{ y: -8, boxShadow: "0 8px 32px 0 rgba(31,38,135,0.15)" }}
-            className="group bg-white/70 dark:bg-white/10 backdrop-blur-xs rounded-2xl shadow-glass p-6 flex flex-col items-start transition-all duration-200 border border-white/40 dark:border-white/20 hover:border-appleBlue"
+            className="group bg-surface/80 backdrop-blur-xs rounded-2xl shadow-glass p-6 flex flex-col items-start transition-all duration-200 border border-line hover:border-accent"
           >
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-appleBlue transition-colors">
+            <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors">
               {project.title}
             </h3>
             <div className="flex flex-wrap gap-2 mb-2">
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 bg-appleGray text-appleBlack/80 dark:bg-white/10 dark:text-white/80 rounded-full text-xs font-medium shadow-sm"
+                  className="px-3 py-1 bg-chip text-ink/80 rounded-full text-xs font-medium shadow-sm"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">{project.description}</p>
+            <p className="text-muted whitespace-pre-line">{project.description}</p>
           </motion.div>
         ))}
       </div>

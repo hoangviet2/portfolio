@@ -19,8 +19,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Apply the saved theme before first paint so dark mode doesn't flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
       </head>
-      <body className={`${inter.className} font-sans antialiased bg-appleGray text-appleBlack`} suppressHydrationWarning>
+      <body className={`${inter.className} font-sans antialiased bg-page text-ink`} suppressHydrationWarning>
         <ClientLayout>
           {children}
         </ClientLayout>

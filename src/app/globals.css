@@ -1,36 +1,87 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: DarkModeToggle adds/removes `.dark` on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* University of Washington palette */
+@theme {
+  --color-uw-purple: #4b2e83;
+  --color-uw-spirit-purple: #32006e;
+  --color-uw-lavender: #c5b4e3;
+  --color-uw-gold: #b7a57a;
+  --color-uw-heritage-gold: #85754d;
+  --color-uw-spirit-gold: #ffc700;
+  --color-uw-cream: #f7f3ea;
+
+  --shadow-glass: 0 4px 32px 0 rgba(75, 46, 131, 0.14);
+  --blur-xs: 2px;
+  --font-sans: "Inter", "SF Pro Display", system-ui, sans-serif;
+}
+
+/* Semantic tokens that flip with the theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page: #fbf9f4;
+  --surface: #ffffff;
+  --ink: #1f1236;
+  --muted: #5d5470;
+  --line: rgba(75, 46, 131, 0.14);
+  --accent: #4b2e83;
+  --accent-2: #85754d;
+  --chip: #f1ecf8;
+  color-scheme: light;
+}
+
+.dark {
+  --page: #120a22;
+  --surface: #1d1335;
+  --ink: #f5f1fb;
+  --muted: #b8aecb;
+  --line: rgba(197, 180, 227, 0.16);
+  --accent: #d4c39a;
+  --accent-2: #c5b4e3;
+  --chip: rgba(197, 180, 227, 0.12);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-chip: var(--chip);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Inter', 'SF Pro Display', 'SF Pro Icons', system-ui, sans-serif;
+  background: var(--page);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
 }
 
-/* Dark mode styles */
-body.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+/* Soft UW glow behind the whole site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(75, 46, 131, 0.10), transparent 60%),
+    radial-gradient(50rem 30rem at -10% 110%, rgba(183, 165, 122, 0.14), transparent 60%);
+}
+
+.dark body::before {
+  background:
+    radial-gradient(60rem 40rem at 85% -10%, rgba(120, 80, 200, 0.22), transparent 60%),
+    radial-gradient(50rem 30rem at -10% 110%, rgba(183, 165, 122, 0.10), transparent 60%);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }

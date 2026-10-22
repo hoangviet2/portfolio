@@ -4,12 +4,14 @@ import { useState, useRef, useEffect } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import MobileWelcome from "./MobileWelcome";
 
+// Absolute paths so the links also work from /chess/
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "About", href: "#about" },
-  { name: "Education", href: "#education" },
+  { name: "Home", href: "/" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Skills", href: "/#skills" },
+  { name: "Chess", href: "/chess/" },
+  { name: "About", href: "/#about" },
+  { name: "Education", href: "/#education" },
 ];
 
 export default function Navbar() {
@@ -19,9 +21,11 @@ export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false);
   const siriAudioRef = useRef<HTMLAudioElement>(null);
   const [siriActive, setSiriActive] = useState(false);
+  const [onChessPage, setOnChessPage] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    setOnChessPage(window.location.pathname.startsWith("/chess"));
     
     // Check if it's mobile and if welcome has been shown before
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -61,23 +65,21 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: showNavbar ? 1 : 0, y: showNavbar ? 0 : -20 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95vw] max-w-4xl rounded-3xl shadow-glass flex items-center justify-between px-4 md:px-6 py-2 border overflow-hidden"
+        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95vw] max-w-4xl rounded-3xl shadow-glass flex items-center justify-between px-4 md:px-6 py-2 border border-line bg-surface/70"
         style={{
-          background: "linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))",
           backdropFilter: "blur(20px)",
-          borderColor: "rgba(255,255,255,0.2)",
           boxShadow: "0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1)"
         }}
       >
-        {/* Animated background gradient */}
+        {/* Animated background gradient (clipped here, not on the nav, so the mobile menu can overflow) */}
         <motion.div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-30 rounded-3xl pointer-events-none"
           animate={{
             background: [
-              "linear-gradient(135deg, rgba(96,165,250,0.1), rgba(167,139,250,0.1))",
-              "linear-gradient(225deg, rgba(167,139,250,0.1), rgba(244,114,182,0.1))",
-              "linear-gradient(315deg, rgba(244,114,182,0.1), rgba(96,165,250,0.1))",
-              "linear-gradient(135deg, rgba(96,165,250,0.1), rgba(167,139,250,0.1))"
+              "linear-gradient(135deg, rgba(75,46,131,0.1), rgba(183,165,122,0.1))",
+              "linear-gradient(225deg, rgba(183,165,122,0.1), rgba(197,180,227,0.1))",
+              "linear-gradient(315deg, rgba(197,180,227,0.1), rgba(75,46,131,0.1))",
+              "linear-gradient(135deg, rgba(75,46,131,0.1), rgba(183,165,122,0.1))"
             ]
           }}
           transition={{
@@ -88,7 +90,7 @@ export default function Navbar() {
         />
 
         {/* Floating particles in navbar */}
-        <div className="absolute inset-0 overflow-hidden rounded-3xl">
+        <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
           {[...Array(4)].map((_, i) => (
             <motion.div
               key={i}
@@ -151,11 +153,11 @@ export default function Navbar() {
               className="relative w-14 h-14 rounded-full flex items-center justify-center overflow-hidden"
               style={{
                 background: siriActive 
-                  ? 'conic-gradient(from 0deg, #60A5FA, #A78BFA, #F472B6, #34D399, #FBBF24, #60A5FA)' 
-                  : 'linear-gradient(135deg, rgba(96,165,250,0.3), rgba(167,139,250,0.3), rgba(244,114,182,0.2))',
+                  ? 'conic-gradient(from 0deg, #4b2e83, #c5b4e3, #b7a57a, #ffc700, #85754d, #4b2e83)' 
+                  : 'linear-gradient(135deg, rgba(75,46,131,0.3), rgba(183,165,122,0.3), rgba(197,180,227,0.2))',
                 boxShadow: siriActive 
-                  ? '0 0 30px 15px rgba(96,165,250,0.3), 0 0 60px 30px rgba(167,139,250,0.2)' 
-                  : '0 0 20px 8px rgba(96,165,250,0.2)'
+                  ? '0 0 30px 15px rgba(75,46,131,0.3), 0 0 60px 30px rgba(183,165,122,0.2)' 
+                  : '0 0 20px 8px rgba(75,46,131,0.2)'
               }}
             >
               {/* Animated particles */}
@@ -164,7 +166,7 @@ export default function Navbar() {
                   key={i}
                   className="absolute w-1.5 h-1.5 rounded-full"
                   style={{
-                    background: `hsl(${i * 45}, 70%, 60%)`,
+                    background: i % 2 ? '#b7a57a' : '#c5b4e3',
                     left: '50%',
                     top: '50%',
                   }}
@@ -257,7 +259,9 @@ export default function Navbar() {
             <li key={link.name}>
               <motion.a
                 href={link.href}
-                className="relative text-appleBlack/80 dark:text-white/80 hover:text-appleBlue dark:hover:text-appleBlue font-medium transition-colors px-3 py-2 rounded-2xl overflow-hidden group"
+                className={`relative font-medium transition-colors px-3 py-2 rounded-2xl overflow-hidden group hover:text-accent ${
+                  onChessPage && link.name === "Chess" ? "text-accent" : "text-ink/80"
+                }`}
                 whileHover={{ 
                   scale: 1.05, 
                   y: -2,
@@ -334,9 +338,9 @@ export default function Navbar() {
               }}
               className="absolute top-20 left-1/2 -translate-x-1/2 w-80 rounded-3xl shadow-2xl z-50 md:hidden border border-white/20 flex items-center justify-center py-8 overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 100%)',
+                background: 'linear-gradient(135deg, rgba(29,15,58,0.97) 0%, rgba(18,10,34,0.92) 100%)',
                 backdropFilter: "blur(20px)",
-                boxShadow: '0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(96,165,250,0.2)',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(75,46,131,0.2)',
               }}
             >
               <ul className="flex flex-col items-center justify-center gap-3 p-4 w-full">
@@ -357,15 +361,15 @@ export default function Navbar() {
                       className="block w-full text-center text-white font-medium transition-all px-6 py-3 text-lg rounded-3xl relative overflow-hidden"
                       whileHover={{ 
                         scale: 1.05,
-                        backgroundColor: 'rgba(96,165,250,0.2)',
-                        boxShadow: '0 0 20px rgba(96,165,250,0.3)',
+                        backgroundColor: 'rgba(75,46,131,0.2)',
+                        boxShadow: '0 0 20px rgba(75,46,131,0.3)',
                       }}
                       whileTap={{ scale: 0.95 }}
                       transition={{ type: 'spring', stiffness: 300, damping: 18 }}
                       onClick={() => setMenuOpen(false)}
                     >
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 rounded-3xl"
+                        className="absolute inset-0 bg-gradient-to-r from-uw-purple/20 via-uw-lavender/20 to-uw-gold/20 rounded-3xl"
                         initial={{ x: '-100%' }}
                         whileHover={{ x: '100%' }}
                         transition={{ duration: 0.6 }}
@@ -379,13 +383,10 @@ export default function Navbar() {
           )}
         </AnimatePresence>
 
-        {/* Dark mode toggle with liquid glass effect */}
-        <div className="hidden md:block relative z-10">
+        {/* Dark mode toggle — visible on every screen size */}
+        <div className="relative z-10">
           <DarkModeToggle />
         </div>
-        
-        {/* Spacer for mobile to balance the layout */}
-        <div className="md:hidden w-14"></div>
       </motion.nav>
     </>
   );

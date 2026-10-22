@@ -34,7 +34,7 @@ export default function ContactSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-black dark:text-white">
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-ink">
         Contact
       </h2>
       
@@ -49,23 +49,23 @@ export default function ContactSection() {
         <input
           type="text"
           placeholder="Your Name"
-          className="px-4 py-3 rounded-lg bg-black/20 dark:bg-white/10 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-glass focus:border-appleBlue outline-none transition-all"
+          className="px-4 py-3 rounded-lg bg-black/20 dark:bg-white/10 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-glass focus:border-accent outline-none transition-all"
           required
         />
         <input
           type="email"
           placeholder="Your Email"
-          className="px-4 py-3 rounded-lg bg-black/20 dark:bg-white/10 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-glass focus:border-appleBlue outline-none transition-all"
+          className="px-4 py-3 rounded-lg bg-black/20 dark:bg-white/10 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-glass focus:border-accent outline-none transition-all"
           required
         />
         <textarea
           placeholder="Your Message"
-          className="px-4 py-3 rounded-lg bg-black/20 dark:bg-white/10 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-glass focus:border-appleBlue outline-none min-h-[100px] transition-all"
+          className="px-4 py-3 rounded-lg bg-black/20 dark:bg-white/10 backdrop-blur-md border border-black/20 dark:border-white/20 shadow-glass focus:border-accent outline-none min-h-[100px] transition-all"
           required
         />
         <button
           type="submit"
-          className="mt-2 px-6 py-3 rounded-full bg-white/30 dark:bg-white/10 backdrop-blur-xl border border-black/40 dark:border-white/20 shadow-glass text-appleBlack dark:text-white font-semibold text-lg transition-all duration-200 hover:bg-white/50 dark:hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-appleBlue/60"
+          className="mt-2 px-6 py-3 rounded-full bg-white/30 dark:bg-white/10 backdrop-blur-xl border border-black/40 dark:border-white/20 shadow-glass text-ink font-semibold text-lg transition-all duration-200 hover:bg-white/50 dark:hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-appleBlue/60"
         >
           Send Message
         </button>
@@ -100,7 +100,7 @@ export default function ContactSection() {
       {/* Download Resume Button */}
       <motion.a
         href="/Resume0602.pdf"
-        className="inline-block px-6 py-3 rounded-full bg-black/20 dark:bg-white/10 backdrop-blur-xl border border-black/40 dark:border-white/20 shadow-glass text-appleBlack dark:text-white font-medium transition-all duration-200 hover:bg-black/30 dark:hover:bg-white/20 mb-8"
+        className="inline-block px-6 py-3 rounded-full bg-black/20 dark:bg-white/10 backdrop-blur-xl border border-black/40 dark:border-white/20 shadow-glass text-ink font-medium transition-all duration-200 hover:bg-black/30 dark:hover:bg-white/20 mb-8"
         download
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -115,7 +115,7 @@ export default function ContactSection() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-        className="text-sm text-gray-600 dark:text-gray-400 border-t border-black/10 dark:border-white/10 pt-6"
+        className="text-sm text-muted border-t border-black/10 dark:border-white/10 pt-6"
       >
         <p>© {new Date().getFullYear()} Hoang, Viet. All rights reserved.</p>
       </motion.div>

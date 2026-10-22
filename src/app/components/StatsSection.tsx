@@ -63,7 +63,7 @@ export default function StatsSection() {
             className="text-center"
           >
             <motion.div
-              className="text-3xl md:text-4xl font-bold text-appleBlue mb-2"
+              className="text-3xl md:text-4xl font-bold text-accent mb-2"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300, damping: 18 }}
             >
@@ -72,7 +72,7 @@ export default function StatsSection() {
                 suffix={stat.suffix}
               />
             </motion.div>
-            <p className="text-gray-600 dark:text-gray-400 font-medium">
+            <p className="text-muted font-medium">
               {stat.label}
             </p>
           </motion.div>

@@ -31,10 +31,10 @@ export default function EducationSection() {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-ink">
           Education
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 mt-2">
+        <p className="text-muted mt-2">
           Currently pursuing my degree while building real-world projects.
         </p>
       </div>
@@ -47,28 +47,28 @@ export default function EducationSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative rounded-3xl border border-white/40 dark:border-white/20 bg-white/70 dark:bg-white/10 shadow-glass p-8 overflow-hidden"
+            className="relative rounded-3xl border border-line bg-surface/80 shadow-glass p-8 overflow-hidden"
           >
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400" />
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-uw-purple via-uw-lavender to-uw-gold" />
 
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
-                <h3 className="text-2xl font-semibold text-black dark:text-white">
+                <h3 className="text-2xl font-semibold text-ink">
                   {item.school}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-muted">
                   {item.program}
                 </p>
               </div>
-              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-appleGray text-appleBlack/80">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-chip text-ink/80">
                 {item.dates}
               </span>
             </div>
 
-            <ul className="mt-6 space-y-3 text-gray-600 dark:text-gray-300">
+            <ul className="mt-6 space-y-3 text-muted">
               {item.highlights.map((highlight) => (
                 <li key={highlight} className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-appleBlue" />
+                  <span className="mt-1 h-2 w-2 rounded-full bg-accent" />
                   <span>{highlight}</span>
                 </li>
               ))}
