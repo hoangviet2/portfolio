@@ -118,7 +118,7 @@ export default function HeroSection() {
           className="mb-8 md:mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-ink">
-            Full stack developer | UW Junior
+            Software engineer · AI builder
           </h2>
         </motion.div>
 
@@ -130,7 +130,7 @@ export default function HeroSection() {
           className="mb-12 max-w-2xl"
         >
           <p className="text-lg md:text-xl leading-relaxed text-muted">
-            Computer Science student focused on AI, machine learning, and software engineering.
+            Computing &amp; Software Systems student at the University of Washington. I build AI-powered products — multi-agent RAG advising, App Store apps, and hackathon-born mobile tools.
           </p>
         </motion.div>
 
@@ -143,7 +143,7 @@ export default function HeroSection() {
         >
           {/* View My Work Button - Liquid Glass */}
           <motion.a
-            href="#projects"
+            href="/projects/"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2)"
@@ -290,26 +290,6 @@ export default function HeroSection() {
           <div className="w-full h-full rounded-full bg-gradient-to-br from-uw-gold via-uw-lavender to-uw-lavender dark:from-uw-gold dark:to-uw-purple" />
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0, filter: "blur(5px)" }}
-        animate={{ opacity: 1, filter: "blur(0px)" }}
-        transition={{ duration: 0.6, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 border-2 border-black dark:border-white rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-3 bg-black dark:bg-white rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
     </motion.section>
   );
 }

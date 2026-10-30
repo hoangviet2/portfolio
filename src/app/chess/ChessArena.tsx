@@ -15,8 +15,8 @@ const pieceSrc = (type: PieceSymbol, color: Color) =>
   `/chess/${color === "w" ? "white" : "black"}${type === "n" ? "kn" : type}.svg`;
 
 function gameStatus(game: Chess, player: Color): { text: string; over: boolean } {
-  const toMove = game.turn() === player ? "You" : "SukhoiBot";
-  if (game.isCheckmate()) return { text: game.turn() === player ? "Checkmate — SukhoiBot wins!" : "Checkmate — you win!", over: true };
+  const toMove = game.turn() === player ? "You" : "Viet Hoang";
+  if (game.isCheckmate()) return { text: game.turn() === player ? "Checkmate — Viet Hoang wins!" : "Checkmate — you win!", over: true };
   if (game.isStalemate()) return { text: "Draw by stalemate", over: true };
   if (game.isThreefoldRepetition()) return { text: "Draw by threefold repetition", over: true };
   if (game.isInsufficientMaterial()) return { text: "Draw — insufficient material", over: true };
@@ -56,7 +56,7 @@ export default function ChessArena() {
   const status = useMemo(() => gameStatus(game, player), [fen, game, player]);
   const orientation: Color = (player === "w") !== flipped ? "w" : "b";
 
-  // What would Sukhoi35 play in the current position? Drives both the bot and the hint panel.
+  // What would Viet Hoang play in the current position? Drives both the bot and the hint panel.
   const candidates: ScoredMove[] = useMemo(() => {
     if (status.over) return [];
     const legal = game.moves({ verbose: true });
@@ -134,8 +134,8 @@ export default function ChessArena() {
   };
 
   const copyPgn = async () => {
-    game.setHeader("White", player === "w" ? "You" : "SukhoiBot");
-    game.setHeader("Black", player === "b" ? "You" : "SukhoiBot");
+    game.setHeader("White", player === "w" ? "You" : "Viet Hoang");
+    game.setHeader("Black", player === "b" ? "You" : "Viet Hoang");
     try {
       await navigator.clipboard.writeText(game.pgn());
       setCopied(true);
@@ -164,13 +164,13 @@ export default function ChessArena() {
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink">
           Play against{" "}
           <span className="bg-gradient-to-r from-uw-purple via-[#6d4fb0] to-uw-heritage-gold dark:from-uw-lavender dark:via-uw-gold dark:to-uw-spirit-gold text-transparent bg-clip-text">
-            SukhoiBot
+            Viet Hoang
           </span>
         </h1>
         <p className="text-muted text-base md:text-lg max-w-3xl">
-          A tiny deep-learning model trained to move like me — <strong className="text-ink">Sukhoi35</strong> on
-          chess.com. It has no search and no engine: every move is a single neural-network guess at what I would
-          play, computed right here in your browser.
+          This is my chess style — <strong className="text-ink">Viet Hoang</strong> — captured in a tiny
+          neural network. It has no search and no engine: every move is a single guess at what I would play,
+          computed right here in your browser.
         </p>
       </motion.header>
 
@@ -183,7 +183,7 @@ export default function ChessArena() {
           className="w-full max-w-[min(640px,calc(100svh-10rem))] mx-auto lg:mx-0"
         >
           <div className="flex items-center justify-between mb-3 px-1 text-sm">
-            <PlayerTag name="SukhoiBot" color={player === "w" ? "b" : "w"} active={thinking} subtitle={thinking ? "thinking…" : "neural net · no search"} />
+            <PlayerTag name="Viet Hoang" color={player === "w" ? "b" : "w"} active={thinking} subtitle={thinking ? "thinking…" : "neural net · no search"} />
           </div>
 
           <div className="relative rounded-2xl p-2 md:p-3 bg-gradient-to-br from-uw-purple to-uw-spirit-purple dark:from-uw-gold/60 dark:to-uw-heritage-gold/60 shadow-2xl">
@@ -306,7 +306,7 @@ export default function ChessArena() {
           <Card>
             <div className="flex items-baseline justify-between">
               <h2 className="text-xs font-semibold uppercase tracking-wide text-muted">
-                {game.turn() === player ? "What Sukhoi35 would play here" : "SukhoiBot is considering"}
+                {game.turn() === player ? "What Viet Hoang would play here" : "Viet Hoang is considering"}
               </h2>
             </div>
             {top.length === 0 ? (
@@ -370,15 +370,15 @@ export default function ChessArena() {
             <h2 className="text-xs font-semibold uppercase tracking-wide text-muted">How it works</h2>
             <ul className="mt-3 space-y-2 text-sm text-muted">
               <li>
-                <strong className="text-ink">Data:</strong> every move I played in ~8,700 chess.com games, plus elite
-                Lichess games (winner&apos;s moves; on draws, the lower-rated side).
+                <strong className="text-ink">Data:</strong> every move I played in ~8,700 of my own chess.com
+                games.
               </li>
               <li>
                 <strong className="text-ink">Model:</strong> 6-block residual CNN, 64 channels
                 {net ? ` — ${(net.params / 1000).toFixed(0)}k params, ${(net.bytes / 1024).toFixed(0)} KB` : ""}.
               </li>
               <li>
-                <strong className="text-ink">Training:</strong> pre-trained on elite games, fine-tuned on mine
+                <strong className="text-ink">Training:</strong> learns to predict my next move
                 {net?.manifest.valTop1 ? ` — matches my exact move ${(net.manifest.valTop1 * 100).toFixed(0)}% of the time on unseen games` : ""}.
               </li>
             </ul>

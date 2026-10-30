@@ -6,8 +6,8 @@ import ClientLayout from "./components/ClientLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Viet Hoang | Full stack developer",
-  description: "Computer Science student focused on AI, machine learning, and software engineering.",
+  title: "Viet Hoang | Software engineer · AI builder",
+  description: "UW Computing & Software Systems student building AI-powered products: Gator Guide, AskDMV, HuskyCart, and more.",
 };
 
 export default function RootLayout({

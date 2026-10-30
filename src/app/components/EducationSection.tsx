@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 const educationItems = [
   {
     school: "University of Washington Tacoma",
-    dates: "September 2026 - Present",
-    program: "B.S. Computer Science and Systems",
+    dates: "Expected May 2028",
+    program: "B.S. Computing and Software Systems",
     highlights: [
-      "Currently enrolled and continuing coursework."
+      "Competitive programmer — ICPC Pacific Northwest Regional 2025 (C++)."
     ]
   },
   {

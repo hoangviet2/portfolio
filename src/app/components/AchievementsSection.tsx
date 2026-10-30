@@ -1,6 +1,45 @@
 "use client";
 import { motion } from "framer-motion";
 
+const experience = [
+  {
+    role: "Student in Residence",
+    org: "MascotGO",
+    where: "Remote / San Francisco, CA",
+    dates: "Jan 2026 – Sep 2026",
+    points: [
+      "Built an AI-powered system that gave students climate insights for their destination locations.",
+      "Analyzed large user datasets to identify behavior trends and inform product strategy.",
+      "Tested features and contributed to UX, user-journey, and student-engagement discussions, plus outreach to students and educators.",
+    ],
+  },
+  {
+    role: "Quantitative Research Intern",
+    org: "ThinkNeuro, LLC",
+    where: "Remote / Seattle, WA",
+    dates: "Jun 2025 – Aug 2025",
+    points: [
+      "Researched Brain-Computer Interface (BCI) systems with Python (Pandas, NumPy, SciPy), R, and MATLAB, synthesizing 100+ scientific papers on neural signal processing.",
+      "Produced reports shaping neural decoding, EEG/MEG preprocessing (MNE-Python), and signal-processing methods for 2 active BCI projects.",
+    ],
+  },
+];
+
+const honors = [
+  {
+    title: "ICPC North America Pacific Northwest Regional (C++)",
+    detail: "8th place, Washington Division 2 · Honorable Mention",
+    date: "Nov 2025",
+  },
+  {
+    title: "Seattle Data AI Hackathon",
+    detail: "Third Place",
+    date: "Dec 2025",
+  },
+];
+
+const item = { hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } };
+
 export default function AchievementsSection() {
   return (
     <motion.section
@@ -12,139 +51,43 @@ export default function AchievementsSection() {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-ink">
-        Achievements
+        Experience
       </h2>
       <motion.ol
-        className="space-y-8 list-decimal list-inside text-left mb-12"
+        className="space-y-8 text-left mb-16"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.2,
-            },
-          },
-        }}
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
       >
-        <motion.li
-          variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
-        >
-          <span className="font-semibold">Top 8 - ICPC Pacific Northwest Regional Contest 2025 (Washington site)</span>
-          <p className="ml-4 text-muted">
-            Placed in the top 8 teams at the ICPC Pacific Northwest regional, Washington site, by solving multiple algorithmic problems under strict time constraints.
-          </p>
-        </motion.li>
-        <motion.li
-          variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
-        >
-          <span className="font-semibold">Machine Learning Intern - Mastcot GO LLC</span>
-          <p className="ml-4 text-muted">
-            Built and improved ML features for an app that helps connect students with support, resources, and opportunities.
-          </p>
-        </motion.li>
-        <motion.li
-          variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }}
-        >
-          <span className="font-semibold">Project Manager, AI Lead - Gator Guide</span>
-          <p className="ml-4 text-muted">
-            Led the project and AI direction for a Green River College initiative that helps students transfer to their dream school.
-          </p>
-        </motion.li>
+        {experience.map((job) => (
+          <motion.li key={job.role} variants={item} className="border-l-2 border-accent pl-5">
+            <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
+              <span className="font-semibold text-ink">{job.role} · {job.org}</span>
+              <span className="text-sm text-muted">{job.dates}</span>
+            </div>
+            <p className="text-sm text-muted italic">{job.where}</p>
+            <ul className="mt-2 space-y-1 text-muted list-disc list-inside">
+              {job.points.map((pt) => (
+                <li key={pt}>{pt}</li>
+              ))}
+            </ul>
+          </motion.li>
+        ))}
       </motion.ol>
 
-      {/* macOS Window Frame */}
-      {/*
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        className="relative mx-auto max-w-4xl"
-      >
-        <div className="relative bg-white dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-between bg-gray-100 dark:bg-gray-800 px-4 py-3 border-b border-gray-200 dark:border-gray-700">
-            <div className="flex items-center space-x-2">
-              <motion.button
-                className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Close window"
-              />
-              <motion.button
-                className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Minimize window"
-              />
-              <motion.button
-                className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Maximize window"
-              />
-            </div>
-            <div className="flex-1 text-center">
-              <h3 className="text-sm font-medium text-muted">
-                Samsung Solve for Tomorrow - Top 50 Global
-              </h3>
-            </div>
-            <div className="w-16"></div>
+      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-ink">
+        Honors &amp; Awards
+      </h2>
+      <div className="grid gap-4 md:grid-cols-2">
+        {honors.map((h) => (
+          <div key={h.title} className="rounded-2xl border border-line bg-surface/80 shadow-glass p-5">
+            <p className="text-xs text-muted">{h.date}</p>
+            <p className="mt-1 font-semibold text-ink">{h.title}</p>
+            <p className="text-sm text-muted">{h.detail}</p>
           </div>
-          <div className="relative bg-black">
-            <div className="relative aspect-video overflow-hidden">
-              <video
-                src="/images/solve-for-tomorrow-video.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.95) contrast(1.05)' }}
-              />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <div className="text-white text-xs font-medium">Playing</div>
-                </div>
-                <div className="text-white text-xs">
-                  Samsung Innovation Showcase
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 dark:bg-gray-800 px-4 py-2 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between text-xs text-muted">
-              <span>Video Player</span>
-              <span>1080p • Auto-playing</span>
-            </div>
-          </div>
-        </div>
-        <div className="absolute -inset-4 bg-gradient-to-r from-uw-purple/5 via-uw-lavender/5 to-uw-gold/5 rounded-2xl blur-xl -z-10"></div>
-      </motion.div>
-      */}
-
-      {/* Featured Article Link */}
-      {/*
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-        className="mt-8 text-center"
-      >
-        <h3 className="text-2xl font-bold mb-4">Featured</h3>
-        <a
-          href="https://www.news18.com/news/studio18/samsung-solve-for-tomorrow-competitions-top-50-shortlisted-entries-highlight-innovative-solutions-in-healthcare-5825209.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block text-accent underline hover:text-ink dark:hover:text-white transition-colors"
-        >
-          News18: Samsung Solve for Tomorrow Competition&apos;s Top 50 Shortlisted Entries Highlight Innovative Solutions in Healthcare
-        </a>
-      </motion.div>
-      */}
+        ))}
+      </div>
     </motion.section>
   );
 }

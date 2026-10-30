@@ -30,10 +30,10 @@ export default function ChessBoardSection() {
             <span className="inline-flex w-fit items-center gap-2 px-3 py-1 rounded-full bg-chip text-accent text-xs font-semibold tracking-wide uppercase">
               New · Deep learning
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-ink">Play chess against my AI twin</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink">Play chess against me</h2>
             <p className="text-muted text-base md:text-lg max-w-xl">
-              SukhoiBot is a ~460k-parameter neural network trained on 8,700 of my chess.com games
-              (plus elite Lichess games for fundamentals) to predict the move <em>I</em> would play.
+              I trained a small neural network on 8,700 of my own chess.com games
+              so it plays the moves <em>I</em> would play — my openings, my habits, my style.
               It runs entirely in your browser.
             </p>
             <motion.a

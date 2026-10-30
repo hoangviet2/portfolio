@@ -46,7 +46,7 @@ function halfToFloat(h: number): number {
 
 export async function loadSukhoiNet(baseUrl: string): Promise<SukhoiNet> {
   const [manifestRes, binRes] = await Promise.all([fetch(`${baseUrl}.json`), fetch(`${baseUrl}.bin`)]);
-  if (!manifestRes.ok || !binRes.ok) throw new Error("SukhoiBot weights not found");
+  if (!manifestRes.ok || !binRes.ok) throw new Error("Viet weights not found");
   const manifest: SukhoiManifest = await manifestRes.json();
   const buf = await binRes.arrayBuffer();
   const halves = new Uint16Array(buf);
@@ -172,7 +172,7 @@ export function scoreMoves(
     .sort((a, b) => b.prob - a.prob);
 }
 
-/** temperature 0 → always the move Sukhoi35 most likely plays; higher → more variety. */
+/** temperature 0 → always the move Viet most likely plays; higher → more variety. */
 export function sampleMove(scores: MoveScore[], temperature: number): MoveScore {
   if (temperature <= 0.05 || scores.length === 1) return scores[0];
   const w = scores.map((s) => s.prob ** (1 / temperature));

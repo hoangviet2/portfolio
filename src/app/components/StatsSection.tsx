@@ -3,8 +3,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 const stats = [
-  { number: 15, label: "Projects Completed", suffix: "+" },
-  { number: 1, label: "Years Experience", suffix: "+" }
+  { number: 100, label: "Students served by Gator Guide", suffix: "+" },
+  { number: 78, label: "Recommendation latency cut", suffix: "%" },
+  { number: 1000, label: "AskDMV practice questions", suffix: "+" }
 ];
 
 interface AnimatedCounterProps {
@@ -52,7 +53,7 @@ export default function StatsSection() {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {stats.map((stat, idx) => (
           <motion.div
             key={stat.label}

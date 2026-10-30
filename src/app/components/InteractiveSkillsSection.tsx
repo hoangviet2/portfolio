@@ -4,31 +4,20 @@ import { useState } from "react";
 
 const skillCategories = [
   {
-    name: "Frontend",
-    skills: [
-      { name: "React Native", level: 80, color: "bg-uw-gold" },
-      { name: "Swift", level: 90, color: "bg-uw-purple" },
-      { name: "TypeScript", level: 90, color: "bg-uw-gold" },
-      { name: "React/Next.js", level: 85, color: "bg-uw-heritage-gold" }
-    ]
+    name: "Languages",
+    skills: ["Python", "Java", "C/C++", "JavaScript", "TypeScript", "Swift", "R", "MATLAB", "HTML/CSS"]
   },
   {
-    name: "Backend",
-    skills: [
-      { name: "Node.js", level: 85, color: "bg-uw-lavender" },
-      { name: "Python", level: 95, color: "bg-uw-purple" },
-      { name: "REST APIs", level: 88, color: "bg-uw-gold" },
-      { name: "PostgreSQL", level: 85, color: "bg-uw-heritage-gold" }
-    ]
+    name: "Frameworks",
+    skills: ["React Native", "Expo", "React", "Flutter", "Flask", "FastAPI", "TensorFlow"]
   },
   {
-    name: "AI/ML",
-    skills: [
-      { name: "PyTorch", level: 70, color: "bg-uw-lavender" },
-      { name: "TensorFlow", level: 85, color: "bg-uw-purple" },
-      { name: "Design AI system", level: 90, color: "bg-uw-gold" },
-      { name: "Agentic AI", level: 90, color: "bg-uw-heritage-gold" }
-    ]
+    name: "AI & Data",
+    skills: ["OpenAI API", "Gemini", "Amazon Bedrock", "RAG", "OCR", "Pandas", "NumPy", "SciPy", "MNE-Python"]
+  },
+  {
+    name: "Cloud & Tools",
+    skills: ["AWS (S3, Bedrock)", "Supabase", "Firebase", "MongoDB", "Chroma", "Vercel", "Git", "Claude Code", "Cursor", "Figma"]
   }
 ];
 
@@ -50,7 +39,7 @@ export default function InteractiveSkillsSection() {
       
       {/* Category Tabs */}
       <div className="flex justify-center mb-12">
-        <div className="flex bg-black/10 dark:bg-white/10 backdrop-blur-xl rounded-full p-1 border border-black/20 dark:border-white/20">
+        <div className="flex flex-wrap justify-center bg-black/10 dark:bg-white/10 backdrop-blur-xl rounded-full p-1 border border-black/20 dark:border-white/20">
           {skillCategories.map((category, idx) => (
             <motion.button
               key={category.name}
@@ -75,35 +64,18 @@ export default function InteractiveSkillsSection() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="grid gap-6 md:grid-cols-2"
+        className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto"
       >
         {skillCategories[activeCategory].skills.map((skill, idx) => (
-          <motion.div
-            key={skill.name}
+          <motion.span
+            key={skill}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="bg-surface/80 backdrop-blur-xl rounded-xl p-6 border border-line shadow-glass"
+            transition={{ duration: 0.4, delay: idx * 0.05 }}
+            className="bg-surface/80 backdrop-blur-xl rounded-xl px-5 py-3 border border-line shadow-glass font-semibold text-ink"
           >
-            <div className="flex justify-between items-center mb-3">
-              <h3 className="font-semibold text-ink">
-                {skill.name}
-              </h3>
-              <span className="text-sm text-muted">
-                {skill.level}%
-              </span>
-            </div>
-            
-            {/* Progress Bar */}
-            <div className="w-full bg-chip rounded-full h-2 overflow-hidden">
-              <motion.div
-                className={`h-full ${skill.color} rounded-full`}
-                initial={{ width: 0 }}
-                animate={{ width: `${skill.level}%` }}
-                transition={{ duration: 1, delay: idx * 0.1, ease: "easeOut" }}
-              />
-            </div>
-          </motion.div>
+            {skill}
+          </motion.span>
         ))}
       </motion.div>
     </motion.section>

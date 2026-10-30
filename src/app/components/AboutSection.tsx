@@ -13,7 +13,7 @@ export default function AboutSection() {
     >
       <motion.img
         src="/images/memoji.jpg"
-        alt="Hoang, Viet Memoji"
+        alt="Viet Hoang Memoji"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -33,10 +33,10 @@ export default function AboutSection() {
           About Me
         </h2>
         <p className="text-lg text-ink/80 mb-2">
-          I&apos;m Hoang, Viet, a Computer Science student focused on AI, machine learning, and software engineering. I build AI-driven applications, including personalized systems and data science solutions.
+          I&apos;m Viet Hoang, a Computing &amp; Software Systems student at the University of Washington. I build AI-powered products — from a multi-agent RAG advising platform to a published App Store app with an AI tutor.
         </p>
         <p className="text-md text-muted">
-          Experienced in hackathons, research projects, and competitive programming, I lead and contribute to tech communities while aiming to build scalable, intelligent systems with real-world impact.
+          I&apos;ve done BCI research at ThinkNeuro, built AI features as a Student in Residence at MascotGO, competed at ICPC, and shipped at DubHacks. Off the keyboard you&apos;ll find me playing chess — try the neural net I trained on my own games.
         </p>
       </motion.div>
     </motion.section>

@@ -7,7 +7,7 @@ import MobileWelcome from "./MobileWelcome";
 // Absolute paths so the links also work from /chess/
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Projects", href: "/#projects" },
+  { name: "Projects", href: "/projects/" },
   { name: "Skills", href: "/#skills" },
   { name: "Chess", href: "/chess/" },
   { name: "About", href: "/#about" },
@@ -21,11 +21,11 @@ export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(false);
   const siriAudioRef = useRef<HTMLAudioElement>(null);
   const [siriActive, setSiriActive] = useState(false);
-  const [onChessPage, setOnChessPage] = useState(false);
+  const [pathname, setPathname] = useState("");
 
   useEffect(() => {
     setIsMounted(true);
-    setOnChessPage(window.location.pathname.startsWith("/chess"));
+    setPathname(window.location.pathname);
     
     // Check if it's mobile and if welcome has been shown before
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -260,7 +260,7 @@ export default function Navbar() {
               <motion.a
                 href={link.href}
                 className={`relative font-medium transition-colors px-3 py-2 rounded-2xl overflow-hidden group hover:text-accent ${
-                  onChessPage && link.name === "Chess" ? "text-accent" : "text-ink/80"
+                  link.href !== "/" && pathname.startsWith(link.href) ? "text-accent" : "text-ink/80"
                 }`}
                 whileHover={{ 
                   scale: 1.05, 

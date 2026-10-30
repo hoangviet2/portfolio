@@ -1,29 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { useState } from "react";
+import ProjectCard from "../projects/ProjectCard";
+import ProjectModal from "../projects/ProjectModal";
+import { projects, type Project } from "../projects/data";
 
-const projects = [
-  {
-    title: "Tiny Tales",
-    tech: ["Python", "Machine Learning", "NLP", "React"],
-    description: `An AI-driven storytelling platform for generating personalized short stories.\n\n• Uses language models to create adaptive narratives based on user prompts.\n• Focuses on personalization, creativity, and a smooth reading experience.\n• Built with a scalable architecture for future feature expansion.`,
-    image: "/images/brokerex.png",
-  },
-  {
-    title: "Gator Guide",
-    tech: ["Next.js", "TypeScript", "Node.js", "Data Engineering"],
-    description: `A student-focused guide platform that helps users navigate campus resources and opportunities.\n\n• Aggregates useful academic and campus information in one place.\n• Prioritizes usability, searchability, and clear information architecture.\n• Built to support collaborative updates and evolving student needs.`,
-    image: "/images/lodgein.png",
-  },
-  {
-    title: "Digital Fridge",
-    tech: ["AI", "Computer Vision", "Python", "Cloud APIs"],
-    description: `An intelligent kitchen assistant for inventory tracking and smart food management.\n\n• Helps monitor stored items and reduce food waste with data-driven suggestions.\n• Designed around practical everyday workflows and accessibility.\n• Combines machine learning with software engineering for real-world impact.`,
-    image: "/images/confera.png",
-  },
-];
-
+// Home-page teaser; the full, filterable list lives at /projects/.
 export default function ProjectsSection() {
+  const [open, setOpen] = useState<Project | null>(null);
+  const featured = projects.filter((p) => p.featured);
+
   return (
     <motion.section
       id="projects"
@@ -31,35 +17,27 @@ export default function ProjectsSection() {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-ink">
         Featured Projects
       </h2>
-      <div className="grid gap-8 md:grid-cols-3">
-        {projects.map((project) => (
-          <motion.div
-            key={project.title}
-            whileHover={{ y: -8, boxShadow: "0 8px 32px 0 rgba(31,38,135,0.15)" }}
-            className="group bg-surface/80 backdrop-blur-xs rounded-2xl shadow-glass p-6 flex flex-col items-start transition-all duration-200 border border-line hover:border-accent"
-          >
-            <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors">
-              {project.title}
-            </h3>
-            <div className="flex flex-wrap gap-2 mb-2">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-chip text-ink/80 rounded-full text-xs font-medium shadow-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <p className="text-muted whitespace-pre-line">{project.description}</p>
-          </motion.div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {featured.map((p) => (
+          <ProjectCard key={p.slug} project={p} onOpen={() => setOpen(p)} />
         ))}
       </div>
+      <div className="mt-10 flex justify-center">
+        <motion.a
+          href="/projects/"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          className="inline-flex items-center gap-2 px-7 py-3 rounded-2xl font-semibold bg-uw-purple text-white dark:bg-uw-gold dark:text-uw-spirit-purple shadow-lg"
+        >
+          See all projects <span aria-hidden>→</span>
+        </motion.a>
+      </div>
+      <ProjectModal project={open} onClose={() => setOpen(null)} />
     </motion.section>
   );
 }

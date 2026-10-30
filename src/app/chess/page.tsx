@@ -3,7 +3,7 @@ import ChessArena from "./ChessArena";
 
 export const metadata: Metadata = {
   title: "Chess Arena | Viet Hoang",
-  description: "Play against SukhoiBot, a tiny neural network trained to play chess like Viet (Sukhoi35).",
+  description: "Play chess against Viet Hoang — a tiny neural network trained on Viet's own games to play in Viet's style.",
 };
 
 export default function ChessPage() {
