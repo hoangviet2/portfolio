@@ -61,6 +61,7 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
               <p className="mt-5 text-sm text-muted">
                 <strong className="text-ink">Technologies:</strong> {project.tech.join(", ")}
               </p>
+              {project.note && <p className="mt-3 text-sm text-muted italic">🔒 {project.note}</p>}
               {project.links && (
                 <div className="mt-5">
                   <p className="text-sm font-semibold text-ink mb-2">Links:</p>
@@ -69,6 +70,7 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
                       <a
                         key={l.href}
                         href={l.href}
+                        {...(l.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
                         className="px-4 py-1.5 rounded-lg border border-line text-sm font-medium text-accent hover:border-accent"
                       >
                         {l.label}

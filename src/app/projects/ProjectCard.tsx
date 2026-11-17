@@ -59,6 +59,7 @@ export default function ProjectCard({ project, onOpen }: { project: Project; onO
             <a
               key={l.href}
               href={l.href}
+              {...(l.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
               onClick={(e) => e.stopPropagation()}
               className="px-3 py-1 rounded-lg border border-line text-xs font-medium text-accent hover:border-accent"
             >

@@ -8,7 +8,7 @@ const experience = [
     where: "Remote / San Francisco, CA",
     dates: "Jan 2026 – Sep 2026",
     points: [
-      "Built an AI-powered system that gave students climate insights for their destination locations.",
+      "Built an AI-powered system that gives students climate insights for their destination locations.",
       "Analyzed large user datasets to identify behavior trends and inform product strategy.",
       "Tested features and contributed to UX, user-journey, and student-engagement discussions, plus outreach to students and educators.",
     ],
@@ -27,7 +27,12 @@ const experience = [
 
 const honors = [
   {
-    title: "ICPC North America Pacific Northwest Regional (C++)",
+    title: "ICPC North America Pacific Northwest Regional 2026 (C++)",
+    detail: "1st place, Washington Division 2 · Bronze Medal",
+    date: "Nov 2026",
+  },
+  {
+    title: "ICPC North America Pacific Northwest Regional 2025 (C++)",
     detail: "8th place, Washington Division 2 · Honorable Mention",
     date: "Nov 2025",
   },
@@ -79,7 +84,7 @@ export default function AchievementsSection() {
       <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-ink">
         Honors &amp; Awards
       </h2>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-3">
         {honors.map((h) => (
           <div key={h.title} className="rounded-2xl border border-line bg-surface/80 shadow-glass p-5">
             <p className="text-xs text-muted">{h.date}</p>

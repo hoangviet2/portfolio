@@ -33,10 +33,10 @@ export default function AboutSection() {
           About Me
         </h2>
         <p className="text-lg text-ink/80 mb-2">
-          I&apos;m Viet Hoang, a Computing &amp; Software Systems student at the University of Washington. I build AI-powered products — from a multi-agent RAG advising platform to a published App Store app with an AI tutor.
+          I&apos;m Viet &ldquo;Ben&rdquo; Hoang, a Computer Science and Systems student at the University of Washington, based in Auburn, WA. I build AI-powered apps people actually use — from multi-agent RAG advising tools to App Store apps and agent systems on AWS.
         </p>
         <p className="text-md text-muted">
-          I&apos;ve done BCI research at ThinkNeuro, built AI features as a Student in Residence at MascotGO, competed at ICPC, and shipped at DubHacks. Off the keyboard you&apos;ll find me playing chess — try the neural net I trained on my own games.
+          I&apos;ve done BCI research at ThinkNeuro, built AI features as a Student in Residence at MascotGO, won a Bronze Medal at the ICPC 2026 Pacific Northwest Regional, and shipped at DubHacks and the AWS Breaking Barriers Hackathon. Off the keyboard you&apos;ll find me playing chess — try the neural net I trained on my own games.
         </p>
       </motion.div>
     </motion.section>

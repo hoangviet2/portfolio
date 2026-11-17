@@ -13,11 +13,11 @@ const skillCategories = [
   },
   {
     name: "AI & Data",
-    skills: ["OpenAI API", "Gemini", "Amazon Bedrock", "RAG", "OCR", "Pandas", "NumPy", "SciPy", "MNE-Python"]
+    skills: ["Claude", "OpenAI API", "Gemini", "Amazon Bedrock (AgentCore)", "RAG", "OCR", "Pandas", "NumPy", "SciPy", "MNE-Python"]
   },
   {
     name: "Cloud & Tools",
-    skills: ["AWS (S3, Bedrock)", "Supabase", "Firebase", "MongoDB", "Chroma", "Vercel", "Git", "Claude Code", "Cursor", "Figma"]
+    skills: ["AWS (S3, DynamoDB, SQS, Bedrock)", "Terraform", "Supabase", "Firebase", "MongoDB", "Chroma", "Vercel", "Git", "Claude Code", "Cursor", "Figma"]
   }
 ];
 

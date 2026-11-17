@@ -5,9 +5,9 @@ const educationItems = [
   {
     school: "University of Washington Tacoma",
     dates: "Expected May 2028",
-    program: "B.S. Computing and Software Systems",
+    program: "B.S. Computer Science and Systems",
     highlights: [
-      "Competitive programmer — ICPC Pacific Northwest Regional 2025 (C++)."
+      "Competitive programmer (C++) — ICPC Pacific Northwest Regional 2026: 1st place, Washington Division 2, Bronze Medal."
     ]
   },
   {

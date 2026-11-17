@@ -43,3 +43,4 @@ coverage/
 data/
 chess-bot/out/
 .playwright-mcp/
+.venv/

@@ -130,7 +130,7 @@ export default function HeroSection() {
           className="mb-12 max-w-2xl"
         >
           <p className="text-lg md:text-xl leading-relaxed text-muted">
-            Computing &amp; Software Systems student at the University of Washington. I build AI-powered products — multi-agent RAG advising, App Store apps, and hackathon-born mobile tools.
+            Computer Science and Systems student at the University of Washington. I build AI-powered apps people actually use — multi-agent RAG advising tools, App Store apps, and agent systems on AWS.
           </p>
         </motion.div>
 
